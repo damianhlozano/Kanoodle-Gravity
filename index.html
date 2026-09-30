@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<title>Kanoodle Gravity</title>
+<meta name="description" content="Los 100 niveles de Kanoodle Gravity: completá el tablero tirando las piezas desde arriba.">
+<meta name="theme-color" content="#2a2e35">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Kanoodle">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" href="iconos/favicon-64.png">
+<link rel="apple-touch-icon" href="iconos/apple-touch-icon.png">
+<style>
+  :root { --sat: env(safe-area-inset-top, 0px); --sar: env(safe-area-inset-right, 0px);
+          --sab: env(safe-area-inset-bottom, 0px); --sal: env(safe-area-inset-left, 0px); }
+  html, body {
+    margin: 0; height: 100%; overflow: hidden;
+    background: linear-gradient(#323842, #181a1f);
+    overscroll-behavior: none; touch-action: none;
+    -webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: transparent;
+  }
+  canvas { position: fixed; inset: 0; width: 100%; height: 100%; display: block; outline: none; }
+  #areasegura { position: fixed; visibility: hidden; pointer-events: none;
+    padding: var(--sat) var(--sar) var(--sab) var(--sal); }
+</style>
+</head>
+<body>
+<canvas id="juego" tabindex="0"></canvas>
+<div id="areasegura"></div>
+<script src="niveles.js"></script>
+<script src="juego.js"></script>
+<script>
+  // ?dev = sin modo offline (para probar cambios sin que queden versiones guardadas)
+  if ('serviceWorker' in navigator && !location.search.includes('dev') && (location.protocol === 'https:'
+      || location.hostname === 'localhost' || location.hostname === '127.0.0.1')) {
+    navigator.serviceWorker.register('sw.js').catch(() => {});
+  }
+</script>
+</body>
+</html>

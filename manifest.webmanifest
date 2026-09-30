@@ -1,0 +1,18 @@
+{
+  "name": "Kanoodle Gravity",
+  "short_name": "Kanoodle",
+  "description": "Los 100 niveles de Kanoodle Gravity: completá el tablero tirando las piezas desde arriba.",
+  "lang": "es",
+  "start_url": "./",
+  "scope": "./",
+  "display": "fullscreen",
+  "display_override": ["fullscreen", "standalone"],
+  "orientation": "any",
+  "background_color": "#1d2025",
+  "theme_color": "#2a2e35",
+  "icons": [
+    { "src": "iconos/icono-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "iconos/icono-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "iconos/icono-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
